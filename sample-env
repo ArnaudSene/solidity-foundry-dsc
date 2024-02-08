@@ -1,0 +1,6 @@
+# Your Sepolia API Key e.g Alchemy
+SEPOLIA_RPC_URL=https://XXXXX
+# Your private key
+PRIVATE_KEY=0xXXXXXX
+# Your etherscan API Key
+ETHERSCAN_API_KEY=XXXXXXX
