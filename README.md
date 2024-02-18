@@ -11,8 +11,9 @@
 [![Dynamic JSON Badge]()](https://github.com/ArnaudSene/solidity-foundry-dsc/actions/workflows/test.yml/actions/workflows/01-test.yml) 
 
 ---
+
 # About
----
+
 
 Creation of a decentralized stable coin (DSC) smart contract using the ERC20.
 
@@ -36,7 +37,7 @@ Here era the specifications
 
 
 # Summary
----
+
 
 - [A Decentralized Stable Coin (DSC) with Solidity](#a-decentralized-stable-coin-dsc-with-solidity)
 - [About](#about)
@@ -61,7 +62,7 @@ Here era the specifications
     - [Liquidation](#liquidation)
 
 # Getting started
----
+
 
 ## Requirements
 
@@ -70,7 +71,7 @@ Here era the specifications
 
 
 # Usage
----
+
 
 ## Start a local node
 
