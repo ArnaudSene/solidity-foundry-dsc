@@ -30,6 +30,8 @@ contract InvariantTest is StdInvariant, Test {
     function invariant_protocolMustHaveMoreValueThanTotalSupply() external view {
         //get the value of all the collateral in the protocol
         //compare it to all the debt (dsc)
+        console.log("\n----- invariant_protocolMustHaveMoreValueThanTotalSupply -----\n");
+        
         uint256 totalSupply = dsc.totalSupply();
         uint256 totalWETHDeposited = IERC20(wETH).balanceOf(address(dscEngine));
         uint256 totalBTCDeposited = IERC20(wBTC).balanceOf(address(dscEngine));
@@ -37,10 +39,21 @@ contract InvariantTest is StdInvariant, Test {
         uint256 wETHValue = dscEngine.getTokenValueInUSD(wETH, totalWETHDeposited);
         uint256 wBTCValue = dscEngine.getTokenValueInUSD(wBTC, totalBTCDeposited);
 
-        console.log("weth: ", wETH);
-        console.log("wbtc: ", wBTC);
-        console.log("total supply: ", totalSupply);
+        console.log("times deposit called: ", handler.timesDepositIsCalled());
+        console.log("times mint called   : ", handler.timesMintIsCalled());
+        console.log("time redeem called  : ", handler.timesRedeemIsCalled());
 
         assert(wETHValue + wBTCValue >= totalSupply);
+    }
+
+    function invariant_gettersShouldNotRevert() public view {
+        console.log("\n----- invariant_gettersShouldNotRevert -----\n");
+        dscEngine.getAdditionalFeedPrecision();
+        dscEngine.getPrecision();
+        dscEngine.getLiquidationThreshold();
+        dscEngine.getLiquidationPrecision();
+        dscEngine.getLiquidationBonus();
+        dscEngine.getMinHealthFactor();
+        dscEngine.getCollateralTokens();
     }
 }

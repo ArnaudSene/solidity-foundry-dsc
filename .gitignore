@@ -13,3 +13,4 @@ docs/
 # Dotenv file
 .env
 coverage.txt
+.gas-snapshot
